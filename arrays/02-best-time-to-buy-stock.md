@@ -120,7 +120,7 @@ public class Solution {
 ```
 ## Mistakes I Made
 - spelling mistakes, capital letter small letter, initalizing 
-- imporvment with max operation,
+- improvment with max operation,
 
 ##  Revision Notes (Important)
 Track minimum price while scanning once. Profit = current price − min price.
