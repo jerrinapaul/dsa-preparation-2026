@@ -58,8 +58,3 @@ What made the optimized solution work?
 ## Final C# Code
 
 ```csharp
-        
-        merged.Add(prev);
-        return merged.ToArray();
-    }
-}
