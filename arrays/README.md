@@ -4,12 +4,10 @@ This repository contains solutions and notes for important array problems freque
 
 ## 🚀 Problem List
 ---
--[x] Two Sum
-- [x] Two Sum
 
 | # | Question | Pattern | Link | Basic Solution Idea |
 |---|---|---|---|---|
-| - [x] | 1 | Two Sum | HashMap | https://leetcode.com/problems/two-sum/ | Store number → index in dictionary. For each number check `target - num`. |
+| - [x]  | 1 | Two Sum | HashMap | https://leetcode.com/problems/two-sum/ | Store number → index in dictionary. For each number check `target - num`. |
 | - [x]  | 2 | Best Time to Buy and Sell Stock | Greedy | https://leetcode.com/problems/best-time-to-buy-and-sell-stock/ | Track minimum price so far and update max profit. |
 | - [x]  | 3 | Maximum Subarray | Kadane's Algorithm | https://leetcode.com/problems/maximum-subarray/ | Keep running sum. Reset if sum becomes negative. |
 | - [x]  | 4 | Maximum Product Subarray | Dynamic Tracking | https://leetcode.com/problems/maximum-product-subarray/ | Track both `maxProduct` and `minProduct` because negatives flip sign. |
