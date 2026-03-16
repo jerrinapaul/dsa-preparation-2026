@@ -5,7 +5,7 @@ This repository contains solutions and notes for important array problems freque
 ## 🚀 Problem List
 ---
 
-| # | Question | Pattern | Link | Basic Solution Idea |
+| done   | # | Question | Pattern | Link | Basic Solution Idea |
 |--------|---|---|---|---|
 | - [x]  | 1 | Two Sum | HashMap | https://leetcode.com/problems/two-sum/ | Store number → index in dictionary. For each number check `target - num`. |
 | - [x]  | 2 | Best Time to Buy and Sell Stock | Greedy | https://leetcode.com/problems/best-time-to-buy-and-sell-stock/ | Track minimum price so far and update max profit. |
