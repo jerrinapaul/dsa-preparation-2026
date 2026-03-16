@@ -3,6 +3,74 @@
 This repository contains solutions and notes for important array problems frequently asked in coding interviews.
 
 ## 🚀 Problem List
+# 📚 DSA Preparation – Sliding Window Problems
+
+Track progress for **Sliding Window pattern problems**.
+Tick the checkbox (`[ ] → [x]`) once the problem is completed.
+
+---
+
+## 🚀 Problem Tracker
+
+| Done | #  | Problem                                               | Difficulty | Pattern                          | Link                                                                                   | Basic Idea                                                   |
+| ---- | -- | ----------------------------------------------------- | ---------- | -------------------------------- | -------------------------------------------------------------------------------------- | ------------------------------------------------------------ |
+| [ ]  | 1  | Maximum Average Subarray I                            | Easy       | Fixed Sliding Window             | https://leetcode.com/problems/maximum-average-subarray-i/                              | Maintain window sum of size `k` and update max average       |
+| [ ]  | 2  | Minimum Size Subarray Sum                             | Medium     | Dynamic Sliding Window           | https://leetcode.com/problems/minimum-size-subarray-sum/                               | Expand window until sum ≥ target then shrink                 |
+| [ ]  | 3  | Longest Substring Without Repeating Characters        | Medium     | Sliding Window + HashSet         | https://leetcode.com/problems/longest-substring-without-repeating-characters/          | Maintain set of characters and shrink when duplicate appears |
+| [ ]  | 4  | Find All Anagrams in a String                         | Medium     | Fixed Window + Frequency Map     | https://leetcode.com/problems/find-all-anagrams-in-a-string/                           | Compare character frequency of window with target string     |
+| [ ]  | 5  | Permutation in String                                 | Medium     | Sliding Window + Frequency Count | https://leetcode.com/problems/permutation-in-string/                                   | Check if any window matches frequency of `s1`                |
+| [ ]  | 6  | Longest Repeating Character Replacement               | Medium     | Sliding Window + Max Frequency   | https://leetcode.com/problems/longest-repeating-character-replacement/                 | Allow replacement if window size − maxCharCount ≤ k          |
+| [ ]  | 7  | Fruit Into Baskets                                    | Medium     | At Most K Distinct               | https://leetcode.com/problems/fruit-into-baskets/                                      | Sliding window with at most 2 distinct values                |
+| [ ]  | 8  | Maximum Number of Vowels in Substring of Given Length | Medium     | Fixed Sliding Window             | https://leetcode.com/problems/maximum-number-of-vowels-in-a-substring-of-given-length/ | Maintain vowel count in window of size `k`                   |
+| [ ]  | 9  | Maximum Erasure Value                                 | Medium     | Sliding Window + HashSet         | https://leetcode.com/problems/maximum-erasure-value/                                   | Maintain unique elements and track sum                       |
+| [ ]  | 10 | Sliding Window Maximum                                | Hard       | Monotonic Deque                  | https://leetcode.com/problems/sliding-window-maximum/                                  | Use deque to maintain decreasing values                      |
+| [ ]  | 11 | Longest Subarray of 1's After Deleting One Element    | Medium     | Sliding Window                   | https://leetcode.com/problems/longest-subarray-of-1s-after-deleting-one-element/       | Maintain at most one zero in window                          |
+| [ ]  | 12 | Grumpy Bookstore Owner                                | Medium     | Sliding Window                   | https://leetcode.com/problems/grumpy-bookstore-owner/                                  | Use window to maximize extra satisfied customers             |
+| [ ]  | 13 | Maximum Erasure Value                                 | Medium     | Unique Sliding Window            | https://leetcode.com/problems/maximum-erasure-value/                                   | Expand window with unique elements and track sum             |
+| [ ]  | 14 | Binary Subarrays With Sum                             | Medium     | Prefix Sum + Sliding Window      | https://leetcode.com/problems/binary-subarrays-with-sum/                               | Count subarrays with exact sum using prefix counts           |
+| [ ]  | 15 | Diet Plan Performance                                 | Easy       | Fixed Window                     | https://leetcode.com/problems/diet-plan-performance/                                   | Maintain window sum and compare with thresholds              |
+
+---
+
+## 📊 Progress
+
+Completed: **0 / 15**
+
+To mark complete:
+
+```
+[ ] → [x]
+```
+
+Example:
+
+```
+[x] Minimum Size Subarray Sum
+```
+
+---
+
+## 🧠 Sliding Window Template (C#)
+
+```csharp
+int left = 0;
+
+for (int right = 0; right < nums.Length; right++)
+{
+    // expand window logic
+
+    while (windowInvalid)
+    {
+        // shrink window
+        left++;
+    }
+
+    // update result
+}
+```
+
+---
+
 
 | # | Question | Pattern | Link | Basic Solution Idea |
 |---|---|---|---|---|
