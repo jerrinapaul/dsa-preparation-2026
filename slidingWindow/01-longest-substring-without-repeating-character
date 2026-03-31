@@ -1,0 +1,100 @@
+# longest-substring-without-repeating-characters
+
+## https://leetcode.com/problems/longest-substring-without-repeating-characters
+
+## Difficulty
+ Medium 
+
+## Pattern
+(Hash Map / Sliding Window )
+
+---
+
+
+## Optimized Approach
+
+### Idea
+Get a sliding window and a hashmap to track the the seen letter.
+### Time Complexity
+O()
+
+### Space Complexity
+O()
+
+---
+
+## Key Insight
+What made the optimized solution work?
+
+---
+
+## Mistakes I Made
+- indOfSeen = dic[s[e]]; instead getting the index from dictionary getting the direct index.  put s[e]
+- including the start of window    if(indOfSeen >= st) missed "=" here
+- when i find a letter that is already in present that letter is outside the window so adding 1 is not needed l = Math.Max(e - st, l);
+- but when it is not in dic we have to add + 1 to add that in the window.
+
+---
+
+## Edge Cases
+- Empty array
+- Single element  missed single element condition.
+- 
+
+---
+
+## Final C# Code
+
+```csharp
+public int LengthOfLongestSubstring(string s) {
+        var st = 0;
+        var e = 0;
+        var l = 1;
+        if(s.Length == 0) return 0;
+         Dictionary<int, int> dic = new Dictionary<int, int>();
+        dic[s[e]] = e;
+        e++;
+       
+        while( e < s.Length)
+        {
+            if(dic.ContainsKey(s[e]))
+            {
+               var indOfSeen = dic[s[e]];
+               if(indOfSeen >= st)
+               {
+                    l = Math.Max(e - st, l); // find the max length till now
+                    st = dic[s[e]] + 1; // start will update if it is present
+                    
+               }
+               else
+               {
+                    l = Math.Max((e - st) + 1, l);                       
+               }                
+            }
+            else
+            {
+                 l = Math.Max((e - st) + 1, l);    
+            }
+            dic[s[e]] = e;
+            e++;
+        }
+        return l;
+    }
+    
+public int LengthOfLongestSubstring(string s) {
+        var l = 0;
+        var maxLen = 1;
+        if(s.Length == 0) return 0;
+        Dictionary<char, int> dic = new Dictionary<char, int>();
+              
+        for(int r = 0; r < s.Length; r++)
+        {
+            char c = s[r];
+            if(dic.ContainsKey(c))
+            {
+              l = Math.Max(dic[c] + 1 , l);
+            } 
+            dic[c] = r;
+            maxLen = Math.Max(maxLen, r - l + 1);           
+        }
+        return maxLen;
