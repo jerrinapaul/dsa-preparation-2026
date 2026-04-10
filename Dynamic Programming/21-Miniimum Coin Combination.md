@@ -30,6 +30,29 @@ The time complexity of min_coin_combination_bottom_up is O(targetn) because we l
 ### Space complexity: 
 The space complexity is O(target) due to the space occupied by the DP array, which is of size target+1.
 
+```csharp
+public int CoinChange(int[] coins, int amount) {
+
+       int[] dp = new int[amount +1];
+       for(int i =0; i <= amount; i++)
+       {
+            dp[i] = int.MaxValue;
+       }
+
+       dp[0] = 0;
+
+       for(int t=1; t <= amount ; t++)
+       {
+        foreach(var coin in coins){
+            if(coin <= t && dp[t-coin] != int.MaxValue)
+            {
+                dp[t] = Math.Min(dp[t], 1 + dp[t-coin]);
+            }
+        }
+       }
+       return dp[amount] != int.MaxValue? dp[amount] : -1;
+    }
+```
 
 ## Top down Approach
 
