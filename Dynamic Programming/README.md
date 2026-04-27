@@ -14,10 +14,10 @@ Update `[ ] → [x]` when completed.
 | [ ]  | 3  | House Robber II                | Medium     | Circular DP        | https://leetcode.com/problems/house-robber-ii/                | Solve two ranges (exclude first/last) |
 | [ ]  | 4  | Coin Change                    | Medium     | Unbounded Knapsack | https://leetcode.com/problems/coin-change/                    | Min coins using DP array              |
 | [ ]  | 5  | Coin Change II                 | Medium     | Combinations DP    | https://leetcode.com/problems/coin-change-ii/                 | Count ways using DP                   |
-| [ ]  | 6  | Longest Increasing Subsequence | Medium     | DP + Binary Search | https://leetcode.com/problems/longest-increasing-subsequence/ | Track increasing subsequence          |
+| [ ]  | 6  | Unique Paths                   | Medium     | Grid DP            | https://leetcode.com/problems/unique-paths/                   | `dp[i][j] = top + left`               |
 | [ ]  | 7  | Longest Common Subsequence     | Medium     | 2D DP              | https://leetcode.com/problems/longest-common-subsequence/     | Match chars or take max of neighbors  |
 | [ ]  | 8  | Edit Distance                  | Hard       | 2D DP              | https://leetcode.com/problems/edit-distance/                  | Insert/delete/replace operations      |
-| [ ]  | 9  | Unique Paths                   | Medium     | Grid DP            | https://leetcode.com/problems/unique-paths/                   | `dp[i][j] = top + left`               |
+| [ ]  | 9  | Longest Increasing Subsequence | Medium     | DP + Binary Search | https://leetcode.com/problems/longest-increasing-subsequence/ | Track increasing subsequence          |
 | [ ]  | 10 | Unique Paths II                | Medium     | Grid DP            | https://leetcode.com/problems/unique-paths-ii/                | Same as above with obstacles          |
 | [ ]  | 11 | Minimum Path Sum               | Medium     | Grid DP            | https://leetcode.com/problems/minimum-path-sum/               | Choose min from top/left              |
 | [ ]  | 12 | Triangle                       | Medium     | Bottom-up DP       | https://leetcode.com/problems/triangle/                       | Build from bottom row                 |
