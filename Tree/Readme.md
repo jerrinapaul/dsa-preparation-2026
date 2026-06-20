@@ -4,7 +4,7 @@ Track your progress by changing `[ ]` to `[x]` when completed.
 
 | Done | Category | Problem | Difficulty | Link | Pattern / Basic Idea |
 |------|----------|---------|------------|------|----------------------|
-| [ ] | Tree | Maximum Depth of Binary Tree | Easy | https://leetcode.com/problems/maximum-depth-of-binary-tree/ | DFS recursion, return `1 + max(left, right)` |
+| [x ] | Tree | Maximum Depth of Binary Tree | Easy | https://leetcode.com/problems/maximum-depth-of-binary-tree/ | DFS recursion, return `1 + max(left, right)` |
 | [ ] | Tree | Same Tree | Easy | https://leetcode.com/problems/same-tree/ | DFS recursion, compare node values and both subtrees |
 | [ ] | Tree | Invert Binary Tree | Easy | https://leetcode.com/problems/invert-binary-tree/ | DFS/BFS, swap left and right child |
 | [ ] | Tree | Binary Tree Level Order Traversal | Medium | https://leetcode.com/problems/binary-tree-level-order-traversal/ | BFS using Queue |
