@@ -1,0 +1,128 @@
+# Problem Name
+Subtree of Another Tree
+
+## Problem Link
+[https://neetcode.io/problems/subtree-of-a-binary-tree/question]
+
+## Difficulty
+Easy
+
+## Pattern
+(DFS)
+
+---
+
+## Brute Force Approach
+
+### Idea
+check if root and subroot match through issametreee
+then DFS to left and right IssubTree()
+
+### Time Complexity
+O()
+
+### Space Complexity
+O()
+
+---
+```c sharp
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     public int val;
+ *     public TreeNode left;
+ *     public TreeNode right;
+ *     public TreeNode(int val=0, TreeNode left=null, TreeNode right=null) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+
+public class Solution {    
+    public bool IsSubtree(TreeNode root, TreeNode subRoot) {
+        if(root == null) return false;
+        if(subRoot == null) return true;
+        var issame = IsSameTree(root,subRoot);
+        if(issame) return true;
+        var isleft = IsSubtree(root.left,subRoot);
+        var isright = IsSubtree(root.right, subRoot);
+        return isleft  || isright ;
+    }
+
+    public bool IsSameTree(TreeNode p, TreeNode q){
+        if( p == null && q == null) return true;
+        if( p == null || q == null) return false;
+
+        if(p.val == q.val){
+            return IsSameTree(p.left,q.left) && IsSameTree(p.right, q.right);
+        }
+        return false;
+    }
+}
+
+## Optimized Approach
+
+### Idea
+Explain briefly
+
+### Time Complexity
+O(n)
+
+### Space Complexity
+O(n)
+
+---
+
+## Key Insight
+do preorder traverse and match the string to ensure there is a subtree
+
+---
+
+## Mistakes I Made
+- Mistake 1
+- Mistake 2
+
+---
+
+## Edge Cases
+- remeber to add delimeter "#" to match correctly
+- add"$" for null nodes
+- Single element
+- etc
+
+---
+
+## Final C# Code
+
+```csharp
+public class Solution {    
+    List<string> tree;
+    List<string> subtree;
+    public bool IsSubtree(TreeNode root, TreeNode subRoot) {
+        tree = new List<string>();
+        subtree = new List<string>();
+        Preorder(root,tree);
+        Preorder(subRoot,subtree);
+        string treeString = String.Join(",",tree);
+        string subtreeString = String.Join(",",subtree);
+        Console.WriteLine($"{treeString},sub {subtreeString}");
+        return treeString.Contains(subtreeString);
+    }
+
+    public void Preorder(TreeNode root, List<string> l){
+        l.Add("$" + root.val);
+        if(root.left != null)
+            Preorder(root.left, l);
+        else{
+             l.Add("#");
+        }
+        if(root.right != null)
+            Preorder(root.right, l);
+        else{
+             l.Add("#");
+        }
+    }
+}
+
