@@ -1,0 +1,68 @@
+# Binary Tree Level Order Traversal
+
+## Problem Link
+https://neetcode.io/problems/level-order-traversal-of-binary-tree
+
+## Difficulty
+Easy / Medium / Hard
+
+## Pattern
+(Hash Map / Two Pointer / Sliding Window / Prefix Sum / etc)
+
+---
+
+## Optimized Approach
+
+### Idea
+BFS with size mentioned from q.count for each level of list
+
+### Time Complexity
+O(n)
+
+### Space Complexity
+O(n)
+
+---
+
+## Key Insight
+What made the optimized solution work?
+
+---
+
+## Mistakes I Made
+- make sure to add root in the queue and then when we iterate add root.left and root.right
+- Mistake 2
+
+---
+
+## Edge Cases
+- when root is empty
+- Single element
+- etc
+
+---
+
+## Final C# Code
+
+```csharp
+public class Solution {
+    public List<List<int>> LevelOrder(TreeNode root) {
+        List<List<int>> levels = new List<List<int>>();
+        if(root == null) return levels;
+        Queue<TreeNode> q = new Queue<TreeNode>();
+        q.Enqueue(root);
+        while(q.Count > 0){
+            int size = q.Count;            
+            List<int> level = new List<int>();
+            for(int i = 0 ; i < size; i++){
+                var cur = q.Dequeue();
+                level.Add(cur.val);
+                if(cur.left != null)q.Enqueue(cur.left);
+                if(cur.right != null)q.Enqueue(cur.right);
+            }
+            
+            levels.Add(level);
+        }
+        return levels;
+    }
+}
